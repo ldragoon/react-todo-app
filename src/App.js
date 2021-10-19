@@ -13,8 +13,21 @@ const FILTER_MAP = {
 
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
-function App(props) {
-  const [tasks, setTasks] = useState(props.tasks);
+//function App(props) {
+function App() {
+  // only executed on initial render
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    console.log('savedTasks: ', savedTasks)
+    if ( savedTasks ) return JSON.parse(savedTasks);
+    else return [];
+  });
+
+  // useEffect to run once the component mounts
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const [filter, setFilter] = useState('All');
 
   const filterList = FILTER_NAMES.map(name => (
@@ -46,9 +59,10 @@ function App(props) {
   function addTask(name) {
     const newTask = {
       id: "todo-" + nanoid(),
-      name: name,
+      name: name.trim(),
       completed: false
     };
+
     setTasks([...tasks, newTask]);
   }
 

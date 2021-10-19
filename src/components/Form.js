@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Form(props) {
-
   const [name, setName] = useState('');
-
-  function handleChange(e) {
-    setName(e.target.value);
-  }
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if ( !name.trim() ) return;
     props.addTask(name);
     setName("");
+  }
+
+  function handleChange(e) {
+    setName(e.target.value);
   }
 
   return (
@@ -30,6 +31,8 @@ function Form(props) {
         autoComplete="off"
         value={name}
         onChange={handleChange}
+        placeholder="what do you need to do"
+        aria-label="new todo input"
       />
 
       <button type="submit" className="btn btn__primary btn__lg">

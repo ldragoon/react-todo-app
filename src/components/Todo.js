@@ -5,10 +5,10 @@ export default function Todo(props) {
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState('');
 
-  const wasEditing = usePrevious(isEditing);
-
   const editFieldRef = useRef(null);
   const editButtonRef = useRef(null);
+
+  const wasEditing = usePrevious(isEditing);
 
   function handleChange(e) {
     setNewName(e.target.value);
@@ -16,6 +16,7 @@ export default function Todo(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     props.editTask(props.id, newName);
     setNewName("");
     setEditing(false);

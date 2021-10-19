@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+/*
 const DATA = [
   {
     id: "todo-0",
@@ -25,10 +26,11 @@ const DATA = [
     completed: false
   }
 ];
+*/
 
 ReactDOM.render(
   <React.StrictMode>
-    <App tasks={DATA} />
+    <App /*tasks={DATA}*/ />
   </React.StrictMode>,
   document.getElementById('root')
 );
