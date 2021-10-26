@@ -20,7 +20,7 @@ body {
   max-width: 68rem;
   margin: 0 auto;
   font: 1.6rem/1.25 Arial, sans-serif;
-  background-color: #f5f5f5;
+  background: #87e0fd;
   color: #4d4d4d;
 }
 
@@ -113,11 +113,12 @@ input[type="text"] {
 
 .btn-group {
   display: flex;
-  /*justify-content: space-between;*/
+  width: 100%;
+  align-items: center;
 }
 
 .btn-group > * {
-  /*flex: 1 1 49%;*/
+  flex: 1 1 49%;
   margin: 0 5px;
 }
 
@@ -145,12 +146,11 @@ input[type="text"] {
   margin-top: 0;
   margin-bottom: 0;
 }
-.stack-small > * + * {
-  margin-top: 1.25rem;
+
+.stack-small {
+  display: flex;
 }
-.stack-large > * + * {
-  margin-top: 2.5rem;
-}
+
 .stack-exception {
   margin-top: 1.2rem;
 }
@@ -219,6 +219,7 @@ input[type="text"] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 10px 0;
 }
 
 .todo > * {
@@ -247,7 +248,6 @@ input[type="text"] {
   position: relative;
   min-height: 44px;
   padding-left: 40px;
-  clear: left;
 }
 
 .c-cb > label::before,
@@ -320,16 +320,6 @@ input[type="text"] {
 @media screen and (min-width: 620px) {
   [class*="__lg"] {
     font-size: 2.4rem;
-  }
-}
-
-@media screen and (min-width: 550px) {
-  .stack-small > * + * {
-    margin-top: 1.4rem;
-  }
-
-  .stack-large > * + * {
-    margin-top: 2.8rem;
   }
 }
 
