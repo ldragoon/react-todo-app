@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashed border appears when button is pressed 1`] = `
+<button
+  aria-pressed="false"
+  className="btn toggle-btn"
+  onClick={[Function]}
+  type="button"
+>
+  <span
+    className="visually-hidden"
+  >
+    Show 
+  </span>
+  <span>
+    test-name
+     
+  </span>
+  <span
+    className="visually-hidden"
+  >
+     tasks
+  </span>
+</button>
+`;
